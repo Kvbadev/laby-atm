@@ -1,0 +1,21 @@
+classDiagram
+    class AtmApplication {
+        +main(String[] args)$ void
+    }
+    class AtmService {
+        -Account account
+        +AtmService(Account account)
+        +getBalance() BigDecimal
+        +deposit(BigDecimal amount) void
+        +withdraw(BigDecimal amount) void
+    }
+    class Account {
+        -BigDecimal balance
+        +getBalance() BigDecimal
+        +deposit(BigDecimal amount) void
+        +withdraw(BigDecimal amount) void
+        -validateAmount(BigDecimal amount) BigDecimal
+    }
+    AtmApplication ..> AtmService : uses
+    AtmApplication ..> Account : creates
+    AtmService --> "1" Account : manages
