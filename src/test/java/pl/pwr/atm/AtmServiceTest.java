@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AtmServiceTest {
-    private final AtmService atm = new AtmService(new Account());
+    private final AtmService atm =
+            new AtmService(new Account());
 
     @Test
     void startsWithZeroBalance() {
@@ -17,7 +18,7 @@ class AtmServiceTest {
     void depositsAndWithdrawsMoney() {
         atm.deposit(new BigDecimal("100.50"));
         atm.withdraw(new BigDecimal("25.25"));
-        assertEquals(new BigDecimal("75.25"), atm.getBalance());
+            assertEquals(new BigDecimal("75.25"), atm.getBalance());
     }
 
     @Test
@@ -26,6 +27,7 @@ class AtmServiceTest {
         atm.withdraw(new BigDecimal("10"));
         assertEquals(new BigDecimal("0.00"), atm.getBalance());
     }
+
 
     @Test
     void rejectsOverdraftWithoutChangingBalance() {

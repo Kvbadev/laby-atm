@@ -56,8 +56,8 @@ public final class AtmApplication {
         String input = scanner.nextLine().trim().replace(',', '.');
         try {
             return new BigDecimal(input);
-        } catch (NumberFormatException exception) {
-            throw new IllegalArgumentException("Wpisz poprawną liczbę.", exception);
+        } catch (   NumberFormatException exception) {
+            throw new   IllegalArgumentException("Wpisz poprawną liczbę.", exception);
         }
     }
 
